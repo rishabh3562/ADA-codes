@@ -117,7 +117,15 @@ int main()
   return 0;
 }
 
-// &&&&&&&&&&&&&&&&&&&& Rishabh ka code
+// output:-
+/*
+Minimum Spanning Tree:
+2 -- 3  4
+0 -- 3  5
+0 -- 1  10
+*/
+
+// &&&&&&&&&&&&&&&&&&&& Rishabh ka code &&&&&&&&&&&&&&&&&&&&
 
 // #include <stdio.h>
 // #include <stdlib.h>
