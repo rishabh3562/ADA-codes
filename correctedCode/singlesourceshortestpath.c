@@ -72,3 +72,18 @@ int main()
 
     return 0;
 }
+
+/*
+output:-
+Vertex   Distance from Source
+0        0
+1        4
+2        12
+3        19
+4        21
+5        11
+6        9
+7        8
+8        14
+
+*/

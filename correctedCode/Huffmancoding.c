@@ -16,6 +16,7 @@ typedef struct Node
 Node *createNode(char character, int frequency)
 {
   Node *node = (Node *)malloc(sizeof(Node));
+  printf("\nin createNode(character:%c,freqency:%d) node=%d\n", character, frequency, node);
   node->character = character;
   node->frequency = frequency;
   node->left = node->right = NULL;
@@ -25,13 +26,32 @@ Node *createNode(char character, int frequency)
 // Function to build Huffman tree
 Node *buildHuffmanTree(char data[], int freq[], int size)
 {
+  // It represents an
+  // array of pointers to Node structures, rather
+  //  than an array of actual Node structures.
   Node **nodes = (Node **)malloc(size * sizeof(Node *));
+  printf("size = %d\n", size);
+  printf("sizeof(Node *)= %d\n", sizeof(Node *));
 
   for (int i = 0; i < size; i++)
   {
     nodes[i] = createNode(data[i], freq[i]);
-  }
 
+    printf("nodes[%d]->character = %c\t nodes[%d]=%d\n", i, nodes[i]->character, i, nodes[i]);
+
+    /*
+    gives this output
+    size = 5
+sizeof(Node *)= 4
+nodes[0]->character = a
+nodes[1]->character = b
+nodes[2]->character = c
+nodes[3]->character = d
+nodes[4]->character = e
+
+    */
+  }
+  // printf("\n*(nodes)=%d\n", (*(nodes + 2))->frequency);
   int n = size;
   while (n > 1)
   {
@@ -100,7 +120,7 @@ int main()
 
   Node *root = buildHuffmanTree(data, freq, size);
 
-  printf("Huffman Codes:\n");
+  printf("\nHuffman Codes:\n");
   printHuffmanCodes(root);
 
   return 0;
