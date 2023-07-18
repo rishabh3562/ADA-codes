@@ -7,8 +7,11 @@
 // function to find the vertex with minimum key value
 int minKey(int key[], int mstSet[])
 {
+    //key[u] and u
     int min = INT_MAX, min_index;
     for (int v = 0; v < V; v++)
+    //agar mstSet[v] false hai 
+    // aur key[v] min se chota hai toh min_index v hai
         if (mstSet[v] == 0 && key[v] < min)
             min = key[v], min_index = v;
     return min_index;

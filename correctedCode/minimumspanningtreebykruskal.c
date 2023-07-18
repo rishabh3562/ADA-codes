@@ -27,6 +27,7 @@ struct subset
   int rank;
 };
 
+//find function to find the parent of the vertex
 int find(struct subset subsets[], int i)
 {
   if (subsets[i].parent != i)
@@ -38,6 +39,7 @@ void Union(struct subset subsets[], int x, int y)
 {
   int xroot = find(subsets, x);
   int yroot = find(subsets, y);
+  //jiski rank zyada hai uske parent banega
   if (subsets[xroot].rank < subsets[yroot].rank)
     subsets[xroot].parent = yroot;
   else if (subsets[xroot].rank > subsets[yroot].rank)
@@ -49,6 +51,8 @@ void Union(struct subset subsets[], int x, int y)
   }
 }
 
+
+//part of qsort function to comapre the weights of the edges
 int compare(const void *a, const void *b)
 {
   struct Edge *a_edge = (struct Edge *)a;
@@ -59,6 +63,7 @@ int compare(const void *a, const void *b)
 void KruskalMST(struct Graph *graph)
 {
   int V = graph->V;
+  // result is the array of Edges structure 
   struct Edge result[V];
   int e = 0;
   int i = 0;
@@ -74,6 +79,8 @@ void KruskalMST(struct Graph *graph)
     struct Edge next_edge = graph->edges[i++];
     int x = find(subsets, next_edge.src);
     int y = find(subsets, next_edge.dest);
+    //if the parent of the vertices are not same then add the edge to the result array
+    //iska matlab hai ki cycle nahi bana raha hai
     if (x != y)
     {
       result[e++] = next_edge;
