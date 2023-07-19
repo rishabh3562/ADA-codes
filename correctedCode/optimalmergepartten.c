@@ -33,17 +33,13 @@ void optimalMergePatterns(int arr[], int n)
                 printf("arr[i:%d] = %d\n\n", i, arr[i]);
                 printf("arr[k+1:%d] = %d\n\n", k + 1, arr[k + 1]);
                 printf("arr[j+1:%d] = %d\n\n", j + 1, arr[j + 1]);
-
                 printf("cost[i:%d][k:%d] = %d\n\n", i, k, c);
                 printf("cost[(k+1):%d][j:%d] = %d\n\n", k + 1, j, c);
-
                 printf("cost[(k+1):%d][j:%d] = %d\n\n", k + 1, j, c);
-
                 printf("cost[i:%d][j:%d] = %d\n\n", i, j, c);
                 printf("(arr[i:%d] * arr[(k + 1):%d] * arr[(j + 1]):%d)=:%d", i, k + 1, j, (arr[i] * arr[k + 1] * arr[j + 1]));
                 if (c < cost[i][j])
                 {
-
                     printf("\n\n\n\nif condition met-------------");
                     printf("\n(before) cost[i:%d][j:%d] = %d\n\n", i, j, c);
                     printf("(before) DP[i:%d][j:%d] = %d\n\n", i, j, k);

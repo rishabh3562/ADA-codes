@@ -50,6 +50,8 @@ void dijkstra(int graph[V][V], int src)
         for (int v = 0; v < V; v++)
             if (!sptSet[v] && graph[u][v] && dist[u] != INT_MAX && dist[u] + graph[u][v] < dist[v])
                 dist[v] = dist[u] + graph[u][v];
+
+                
     }
 
     // print the shortest path from the source vertex to all other vertices

@@ -7,16 +7,21 @@ void merge(int arr[], int low, int mid, int high) {
     int i, j, k;
     int n1 = mid - low + 1;
     int n2 = high - mid;
-
+    printf("low:%d, mid:%d, high:%d\n",low,mid,high);
+printf("n1:%d, n2:%d\n",n1,n2);
     // Create temporary arrays
     int L[n1], R[n2];
 
     // Copy data to temporary arrays
     for (i = 0; i < n1; i++) {
+        // half left array ko copy karega
         L[i] = arr[low + i];
+       
     }
     for (j = 0; j < n2; j++) {
-        R[j] = arr[mid + 1 + j];
+        // half right array ko copy karega
+        R[j] = arr[(mid + 1) + j];
+       
     }
 
     // Merge the temporary arrays back into arr[low..high]

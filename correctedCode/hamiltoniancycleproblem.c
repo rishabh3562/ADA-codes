@@ -7,6 +7,7 @@ void printSolution(int path[]);
    in the Hamiltonian Cycle constructed so far (stored in 'path[]') */
 int isSafe(int v, int graph[V][V], int path[], int pos)
 {
+    printf("isSafe(v:%d, graph, path[pos-1]:%d,pos: %d)\n", v,path[pos-1], pos);
     // Check if this vertex is an adjacent vertex of the previously added vertex
     if (graph[path[pos - 1]][v] == 0)
         return 0;
